@@ -1,0 +1,180 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		
+		<title>Employee_Network_Analysys - Massively by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+		<div id="wrapper">
+
+			<!-- Header -->
+				<header id="header">
+					
+			   </header>
+
+	   
+			<!-- Header -->
+			<header id="header">
+					
+			</header>
+
+	<!-- Nav -->
+		<nav id="nav">
+		   <ul class="links">
+			  <li><a href="index.html">WELCOME</a></li>
+			  <li><a href="About.html">ABOUT</a></li>
+			  <!---- <li><a href="elements.html">BLOG</a></li> ---->
+		   </ul>
+		   <ul class="icons">
+			<li><a href="OMAR ABOELWAFA-Data Scientist & Analyst.pdf"  class="fa fa-download"><span class="label"><b> DOWNLOAD  MY CV </b></span></a></li>
+			  <li><a href="https://omaraboelwafa@gmail.com" class="fas fa-coffee "><span class="label"><b> LET'S TALK </b></span></a></li>
+			 <li><a href="https://www.kaggle.com/omaraboelwafa" class="icon brands fa-kaggle"><span class="label">Kiggle</span></a></li>
+			 <li><a href="https://www.linkedin.com/in/omar-aboelwafa-0ab0a5168/" class="icon brands fa-linkedin"><span class="label">Linkedin</span></a></li>
+			 <li><a href="https://github.com/Omar-Aboelwafa" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+		   </ul>
+	   </nav>
+
+	   <!-- Main -->
+		  <div id="main">
+
+	   <!-- Main -->
+		   <div id="main">
+
+			   <!-- Post -->
+			   <section class="post">
+				   <header class="major">
+					<a class="image fit"><img src="images/Employees_netowrk_analysis/Untitled-design-12.png" alt="" /></a>
+					   <h1>employees network Analysis<br />
+					   </h1>
+				   </header>
+
+	   <!-- Text stuff -->
+				   <h2>Business Case</h2>
+				   <p>Head of HR wants help mapping out the company's employee network using message data. They plan to use the network map to understand interdepartmental dynamics better and explore how the company shares information. The ultimate goal of this project is to think of ways to improve collaboration throughout the company.</p>
+				   <h3>Business Demand</h3>
+											<ul class="alt">
+												<li>Which departments are the most/least active?</li>
+												<li>Which employee has the most connections?.</li>
+												<li>Identify the most influential departments and employees.</li>
+												<li>Using the network analysis, in which departments would you recommend the HR team focus to boost collaboration?.</li>
+											</ul>
+				   <hr />
+				   <!-- Text stuff -->
+				   <h2>Loading packages & Transformation (Pandas) </h2>
+				   <p>Starting with importing necessary libraries <b>Pandas</b> , <b>Numpay</b> , <b>Matplotlib</b> , <b>Seaborn</b> , and<b> , Plotly</b>.</p>Reading datasets and take the first look and checking for messing and dublicated data and explore data types and EDA .</p></p>
+					   
+					   <a class="image fit"><img src="images/Employees_netowrk_analysis/employees_data.jpg" alt="" /></a></b>
+					   
+					   <a class="image fit"><img src="images/Employees_netowrk_analysis/messages_data.jpg" alt="" /></a></b>
+					   
+					   <a class="image fit"><img src="images/Employees_netowrk_analysis/employee_.info.jpg" alt="" /></a></b>
+					   
+					   
+				   <hr />
+				   <!-- Text stuff -->
+				   <h2>ASKING QUESTIONS </h2>
+				   <p>Below is a screenshot of the data model after cleansed and prepared tables were read into Power BI.</p>
+					   
+					   <ul class="alt">
+						<li>We have (664) employees in our beautiful company ?</li>
+						<li>Who is sending and did not receive response or interaction ?</li>
+						<li>Who is sender and receiver ?</li>
+						<li>Who is just receiver and don't make interaction with others (muted people)?</li>
+						<li>Is there any employee not sender and not receiver ? i think this would be the worst case for any employee</li>
+					</ul>
+
+				   <hr />
+
+				   </header>
+					   <!-- Text stuff -->
+					   <h2>EXPLORING THE STORY </h2>
+					   
+				   <a  class="image fit"><img src="images/Employees_netowrk_analysis/employee_count_senders.jpg" alt="" /></a>				   <ul class="alt">
+					<p>so let's go deeper and make our employees slices 🔪 , i think we can slice into 5 groups,
+						all senders generally , most senders , only senders , senders and receivers and finally only receivers</p>
+					
+				</ul>
+				   <a  class="image fit"><img src="images/Employees_netowrk_analysis/total company employes.jpg" alt="" /></a>
+				   <p>So we have only 85 employee trying to have communication with others ,
+					lees than 13 % from our people sending messages and it's a bad indicator</p>
+					<hr />
+					<p>Here we just put our hands on the biggest , main and general problem witch is the most of our employees don't interact with others ,
+						so we will focus in it and we will ignore making date and time analysis because we have a general problem not a periodic problem</p>
+						<a  class="image fit"><img src="images/Employees_netowrk_analysis/Screenshot 2023-03-21 022618.jpg" alt="" /></a>
+
+						<p>Now let's see employees whose have the most impact , according to to the role 20/80 ,
+							 I think that just 20% of senders employees making 80% of total impact
+							so let's explore</p>
+							<a  class="image fit"><img src="images/Employees_netowrk_analysis/Screenshot 2023-03-21 022810.jpg" alt="" /></a>
+							<a  class="image fit"><img src="images/Employees_netowrk_analysis/Screenshot 2023-03-21 023038.jpg" alt="" /></a>
+							<p>Now let's go deeper in our data</p>
+							<a  class="image fit"><img src="images/Employees_netowrk_analysis/Screenshot 2023-03-21 023156.jpg" alt="" /></a>
+							<a  class="image fit"><img src="images/Employees_netowrk_analysis/Screenshot 2023-03-21 023450.jpg" alt="" /></a>
+							<a  class="image fit"><img src="images/Employees_netowrk_analysis/Screenshot 2023-03-21 023344.jpg" alt="" /></a>
+							<p>Now our data told us that (55%) of people whose sending messages didn't receive response witch is a big ratio
+								And only (6%) of people whose receiving messages responds to these messages and (94%) didn't make a response</p>
+								<a  class="image fit"><img src="images/Employees_netowrk_analysis/Screenshot 2023-03-21 023515.jpg" alt="" /></a>
+								<a  class="image fit"><img src="images/Employees_netowrk_analysis/Screenshot 2023-03-21 023602.jpg" alt="" /></a>
+								<a  class="image fit"><img src="images/Employees_netowrk_analysis/Screenshot 2023-03-21 023655.jpg" alt="" /></a>
+								<a  class="image fit"><img src="images/Employees_netowrk_analysis/Screenshot 2023-03-26 021137.jpg" alt="" /></a>
+								<a  class="image fit"><img src="images/Employees_netowrk_analysis/Screenshot 2023-03-26 021438.jpg" alt="" /></a>
+								<a  class="image fit"><img src="images/Employees_netowrk_analysis/Screenshot 2023-03-26 021716.jpg" alt="" /></a>
+								<p>Only by eye we can see clearly that Salse is the most active and the most influential department , because it have more than (30%) of all senders in generally And (47%) of the most senders employees specifically</p>
+								<a  class="image fit"><img src="images/Employees_netowrk_analysis/Screenshot 2023-03-26 022305.jpg" alt="" /></a>
+								<p>So now clearly we can see that only_receivers employees are our target, let's describe them correctly and call them muted employees</p>
+								<a  class="image fit"><img src="images/Employees_netowrk_analysis/Screenshot 2023-03-26 022709.jpg" alt="" /></a>
+								<a  class="image fit"><img src="images/Employees_netowrk_analysis/Screenshot 2023-03-26 022910.jpg" alt="" /></a>
+								<a  class="image fit"><img src="images/Employees_netowrk_analysis/Screenshot 2023-03-26 023051.jpg" alt="" /></a>
+								<a  class="image fit"><img src="images/Employees_netowrk_analysis/Screenshot 2023-03-26 023229.jpg" alt="" /></a>
+								<a  class="image fit"><img src="images/Employees_netowrk_analysis/Screenshot 2023-03-26 023441.jpg" alt="" /></a>
+								<a  class="image fit"><img src="images/Employees_netowrk_analysis/Screenshot 2023-03-26 023522.jpg" alt="" /></a>
+								<a  class="image fit"><img src="images/Employees_netowrk_analysis/Screenshot 2023-03-26 023612.jpg" alt="" /></a>
+								<a  class="image fit"><img src="images/Employees_netowrk_analysis/Screenshot 2023-03-26 023751.jpg" alt="" /></a>
+								<p>So Marketing department is the least active with only less than (5%) of the department employees sending messages</p>
+								<hr />
+								<p>let's see how the geographical distribution impact on our target</p>
+								<a  class="image fit"><img src="images/Employees_netowrk_analysis/Screenshot 2023-03-26 024355.jpg" alt="" /></a>
+								<a  class="image fit"><img src="images/Employees_netowrk_analysis/treemap.jpg" alt="" /></a>
+
+
+								
+
+
+								
+
+
+
+
+					</div>
+
+				
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
