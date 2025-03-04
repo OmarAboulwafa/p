@@ -1,0 +1,241 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		
+		<title>Employee_Network_Analysys - Massively by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+		<div id="wrapper">
+
+			<!-- Header -->
+				<header id="header">
+					
+			   </header>
+
+	   
+			<!-- Header -->
+			<header id="header">
+					
+			</header>
+
+	<!-- Nav -->
+		<nav id="nav">
+		   <ul class="links">
+			  <li><a href="index.html">WELCOME</a></li>
+			  <li><a href="About.html">ABOUT</a></li>
+			  <!---- <li><a href="elements.html">BLOG</a></li> ---->
+		   </ul>
+		   <ul class="icons">
+			<li><a href="OMAR ABOELWAFA-Data Scientist & Analyst.pdf"  class="fa fa-download"><span class="label"><b> DOWNLOAD  MY CV </b></span></a></li>
+			  <li><a href="https://omaraboelwafa@gmail.com" class="fas fa-coffee "><span class="label"><b> LET'S TALK </b></span></a></li>
+			 <li><a href="https://www.kaggle.com/omaraboelwafa" class="icon brands fa-kaggle"><span class="label">Kiggle</span></a></li>
+			 <li><a href="https://www.linkedin.com/in/omar-aboelwafa-0ab0a5168/" class="icon brands fa-linkedin"><span class="label">Linkedin</span></a></li>
+			 <li><a href="https://github.com/Omar-Aboelwafa" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+		   </ul>
+	   </nav>
+
+	   <!-- Main -->
+		  <div id="main">
+
+	   <!-- Main -->
+		   <div id="main">
+
+			   <!-- Post -->
+			   <section class="post">
+				   <header class="major">
+					<a class="image fit"><img src="images\customer churn.png" alt="" /></a>
+					   <h1>Customer Churn prediction<br />
+					   </h1>
+				   </header>
+
+	   <!-- Text stuff -->
+				   <h2>Business Case</h2>
+				   <p> Customer Churn Analysis and Predictive Modeling Report for Telecom Company
+					Prepared by: [Your Name/Team Name]
+					Date: [Insert Date]
+					
+					Executive Summary
+					This report addresses the critical issue of high customer churn (26%) impacting the profitability of [Telecom Company]. Using machine learning (ML), we developed a predictive model to identify at-risk customers and uncover key drivers of churn. Key findings include the significance of contract type, monthly charges, and customer tenure as primary churn predictors. Strategic recommendations focus on targeted retention campaigns, personalized incentives, and operational improvements to reduce churn and enhance profitability.
+					
+					Introduction
+					Objective:
+					
+					Leverage customer data to build an ML model predicting churn.
+					
+					Identify actionable factors influencing churn to guide retention strategies.
+					
+					Hypothesis:
+					
+					Churn is driven by service dissatisfaction, pricing, contract flexibility, and demographic factors.
+					
+					Background:
+					
+					The telecom industry faces intense competition, making customer retention critical.
+					
+					A 26% churn rate indicates systemic issues requiring data-driven intervention.
+					
+					Methodology
+					Data Sources:
+					
+					Customer demographics (age, gender, location).
+					
+					Usage patterns (data usage, call minutes).
+					
+					Billing details (monthly charges, payment method).
+					
+					Contract terms (monthly vs. long-term).
+					
+					Churn status (labeled data from the past 12 months).
+					
+					Approach:
+					
+					Data Preprocessing: Cleaned missing values, encoded categorical variables, and normalized numerical features.
+					
+					Model Selection: Tested logistic regression, random forest, and XGBoost; selected XGBoost for highest accuracy (F1-score: 0.84).
+					
+					Validation: 80/20 train-test split, cross-validation, and ROC-AUC analysis.
+					
+					Data Overview
+					Dependent Variable:
+					
+					Churn Status: Binary (0 = retained, 1 = churned).
+					
+					Independent Variables:
+					
+					Category	Variables
+					Demographic	Age, gender, marital status
+					Usage	Monthly GB usage, call duration
+					Contract	Contract type, tenure (months)
+					Billing	Monthly charges, payment delays
+					Service	Number of complaints, tech support interactions
+					Timeframe: Data spans January 2022 –December 2023.
+					
+					Exploratory Analysis
+					Key Insights:
+					
+					Churn Distribution: 26% of customers churned; highest among month-to-month contracts (42%).
+					
+					Correlations:
+					
+					Strong negative correlation between tenure and churn (r = -0.68).
+					
+					Positive correlation between monthly charges and churn (r = 0.54).
+					
+					Visualization:
+					Churn by Contract Type
+					
+					Model Development
+					Initial Model (Logistic Regression):
+					
+					Accuracy: 78% | Precision: 0.72 | Recall: 0.65.
+					
+					Significant variables: Tenure (p = 0.001), Contract Type (p = 0.003).
+					
+					Final Model (XGBoost):
+					
+					Accuracy: 86% | Precision: 0.81 | Recall: 0.79 | AUC: 0.88.
+					
+					Top Predictors:
+					
+					Tenure (Feature Importance: 32%).
+					
+					Monthly Charges (28%).
+					
+					Contract Type (18%).
+					
+					Key Findings
+					Tenure Matters: Customers with <12 months tenure are 3x more likely to churn.
+					
+					Pricing Sensitivity: Customers paying >$80/month have 45% churn risk.
+					
+					Contract Lock-In: Long-term contracts reduce churn by 60%.
+					
+					Actionable Insights
+					Short-Term Recommendations:
+					
+					Targeted Offers: Provide discounts or free upgrades to high-risk customers (e.g., tenure <6 months).
+					
+					Contract Incentives: Offer $10/month discount for 1-year contract renewals.
+					
+					Long-Term Strategies:
+					
+					Proactive Support: Flag customers with >2 complaints for immediate resolution.
+					
+					Personalization: Use ML insights to tailor marketing campaigns (e.g., family plans for long-tenured users).
+					
+					Implementation Plan
+					Deploy Model: Integrate churn predictions into CRM for real-time alerts.
+					
+					A/B Testing: Pilot retention offers and measure impact on churn.
+					
+					Monitor Metrics: Track churn rate, CLTV, and campaign ROI monthly.
+					
+					Conclusion
+					By addressing the root causes of churn through data-driven strategies, [Telecom Company] can reduce churn by an estimated 35% within 6 months, directly improving profitability. Continuous model refinement and customer engagement will sustain long-term growth.
+					
+					Appendices
+					
+					Model performance metrics.
+					
+					Detailed variable coefficients.
+					
+					Retention campaign ROI projections.
+					
+					Prepared by: [Your Name]
+					Contact: [Your Email] </p>
+				   <h3>Business Demand</h3>
+											
+				   <hr />
+				   <!-- Text stuff -->
+				   
+					   
+				</header>
+				<!-- Text stuff -->
+				<h2>Sales Management Dashboard </h2>
+				<p>The finished sales management dashboard with one page with works as a dashboard and overview, with two other pages focused on combining tables for necessary details and visualizations to show sales over time, per customers and per products.</p></p>
+				<p style="color:rgb(26, 34, 150);"> Click the picture to to open the dashboard and try it out!</b></p>
+			    <a href="https://cuddly-parakeet-p6rprqgvrppfr469-8000.app.github.dev/"
+				class="image fit"><img src="images\Customer Churn Prediction.png" alt="" /></a>   
+				  
+
+				<code></code>				
+
+
+								
+
+
+
+
+					</div>
+
+				
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
