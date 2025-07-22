@@ -1,32 +1,213 @@
-<!DOCTYPE HTML>
-<html>
-		
-		<link  href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" 
-		rel="stylesheet" 
-		/>
-  
-	</head>
-	<body class="is-preload">
+<html lang="en"><head>
+			<meta charset="utf-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+			<title>Chat</title>
+			<link href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css" rel="stylesheet">
+			<link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet">
+			<style>
+				html,
+				body,
+				#n8n-chat {
+					width: 100%;
+					height: 100%;
+				}
+			</style>
+			<style>:root {
+  /* Colors */
+  --chat--color-primary: #e74266;
+  --chat--color-primary-shade-50: #db4061;
+  --chat--color-primary-shade-100: #cf3c5c;
+  --chat--color-secondary: #20b69e;
+  --chat--color-secondary-shade-50: #1ca08a;
+  --chat--color-white: #ffffff;
+  --chat--color-light: #f2f4f8;
+  --chat--color-light-shade-50: #e6e9f1;
+  --chat--color-light-shade-100: #c2c5cc;
+  --chat--color-medium: #d2d4d9;
+  --chat--color-dark: #101330;
+  --chat--color-disabled: #777980;
+  --chat--color-typing: #404040;
 
-		<!-- Wrapper -->
-			<div id="wrapper" class="fade-in">
-<script type="module">
-				import { createChat } from "https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js";
-			
-				createChat({
-				  webhookUrl:
-					"https://sterling-sensible-pigeon.ngrok-free.app/webhook/b7668869-7f23-4171-a9fd-f8a222fb5048/chat",
-				  initialMessages: [
-					"Hi there! 👋 ",
-					"I'M Omar's AI Assistant . How can I assist you today?",
-					
-				   ],
-				  i18n: {
-					en: {
-					  title: "Hi there!🤖",
-					  subtitle: "Start a chat. We're here to help you 24/7.",
-					  inputPlaceholder: "Type your question.",
-					},
-				  },
-				});
-			  </script>						
+  /* Base Layout */
+  --chat--spacing: 1rem;
+  --chat--border-radius: 0.25rem;
+  --chat--transition-duration: 0.15s;
+  --chat--font-family: (
+    'Amiri',
+    'Scheherazade New',
+    'Noto Sans Arabic',
+    'Tahoma',
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    Oxygen-Sans,
+    Ubuntu,
+    Cantarell,
+    'Helvetica Neue',
+    sans-serif
+  );
+
+  /* Window Dimensions */
+  --chat--window--width: 400px;
+  --chat--window--height: 600px;
+  --chat--window--bottom: var(--chat--spacing);
+  --chat--window--right: var(--chat--spacing);
+  --chat--window--z-index: 9999;
+  --chat--window--border: 1px solid var(--chat--color-light-shade-50);
+  --chat--window--border-radius: var(--chat--border-radius);
+  --chat--window--margin-bottom: var(--chat--spacing);
+
+  /* Header Styles */
+  --chat--header-height: auto;
+  --chat--header--padding: var(--chat--spacing);
+  --chat--header--background: var(--chat--color-dark);
+  --chat--header--color: var(--chat--color-light);
+  --chat--header--border-top: none;
+  --chat--header--border-bottom: none;
+  --chat--header--border-left: none;
+  --chat--header--border-right: none;
+  --chat--heading--font-size: 2em;
+  --chat--subtitle--font-size: inherit;
+  --chat--subtitle--line-height: 1.8;
+
+  /* Message Styles */
+  --chat--message--font-size: 1rem;
+  --chat--message--padding: var(--chat--spacing);
+  --chat--message--border-radius: var(--chat--border-radius);
+  --chat--message-line-height: 1.5;
+  --chat--message--margin-bottom: calc(var(--chat--spacing) * 1);
+  --chat--message--bot--background: var(--chat--color-white);
+  --chat--message--bot--color: var(--chat--color-dark);
+  --chat--message--bot--border: none;
+  --chat--message--user--background: var(--chat--color-secondary);
+  --chat--message--user--color: var(--chat--color-white);
+  --chat--message--user--border: none;
+  --chat--message--pre--background: rgba(0, 0, 0, 0.05);
+  --chat--messages-list--padding: var(--chat--spacing);
+
+  /* Toggle Button */
+  --chat--toggle--size: 64px;
+  --chat--toggle--width: var(--chat--toggle--size);
+  --chat--toggle--height: var(--chat--toggle--size);
+  --chat--toggle--border-radius: 50%;
+  --chat--toggle--background: var(--chat--color-primary);
+  --chat--toggle--hover--background: var(--chat--color-primary-shade-50);
+  --chat--toggle--active--background: var(--chat--color-primary-shade-100);
+  --chat--toggle--color: var(--chat--color-white);
+
+  /* Input Area */
+  --chat--textarea--height: 50px;
+  --chat--textarea--max-height: 30rem;
+  --chat--input--font-size: inherit;
+  --chat--input--border: 0;
+  --chat--input--border-radius: 0;
+  --chat--input--padding: 0.8rem;
+  --chat--input--background: var(--chat--color-white);
+  --chat--input--text-color: initial;
+  --chat--input--line-height: 1.5;
+  --chat--input--placeholder--font-size: var(--chat--input--font-size);
+  --chat--input--border-active: 0;
+  --chat--input--left--panel--width: 2rem;
+
+  /* Button Styles */
+  --chat--button--color: var(--chat--color-light);
+  --chat--button--background: var(--chat--color-primary);
+  --chat--button--padding: calc(var(--chat--spacing) * 1 / 2) var(--chat--spacing);
+  --chat--button--border-radius: var(--chat--border-radius);
+  --chat--button--hover--color: var(--chat--color-light);
+  --chat--button--hover--background: var(--chat--color-primary-shade-50);
+  --chat--close--button--color-hover: var(--chat--color-primary);
+
+  /* Send and File Buttons */
+  --chat--input--send--button--background: var(--chat--color-white);
+  --chat--input--send--button--color: var(--chat--color-light);
+  --chat--input--send--button--background-hover: var(--chat--color-primary-shade-50);
+  --chat--input--send--button--color-hover: var(--chat--color-secondary-shade-50);
+  --chat--input--file--button--background: var(--chat--color-white);
+  --chat--input--file--button--color: var(--chat--color-secondary);
+  --chat--input--file--button--background-hover: var(--chat--input--file--button--background);
+  --chat--input--file--button--color-hover: var(--chat--color-secondary-shade-50);
+  --chat--files-spacing: 0.25rem;
+
+  /* Body and Footer */
+  --chat--body--background: var(--chat--color-light);
+  --chat--footer--background: var(--chat--color-light);
+  --chat--footer--color: var(--chat--color-dark);
+}
+
+
+/* You can override any class styles, too. Right-click inspect in Chat UI to find class to override. */
+.chat-message {
+	max-width: 50%;
+}
+
+.chat-layout {
+
+    direction: rtl;
+
+}</style>
+		</head>
+		<body>
+			<script type="module">
+				import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+
+				(async function () {
+					const authentication = 'none';
+					let metadata;
+					if (authentication === 'n8nUserAuth') {
+						try {
+							const response = await fetch('/rest/login', {
+									method: 'GET',
+									headers: { 'browser-id': localStorage.getItem('n8n-browserId') }
+							});
+
+							if (response.status !== 200) {
+								throw new Error('Not logged in');
+							}
+
+							const responseData = await response.json();
+							metadata = {
+								user: {
+									id: responseData.data.id,
+									firstName: responseData.data.firstName,
+									lastName: responseData.data.lastName,
+									email: responseData.data.email,
+								},
+							};
+						} catch (error) {
+							window.location.href = '/signin?redirect=' + window.location.href;
+							return;
+						}
+					}
+
+					createChat({
+						mode: 'fullscreen',
+						webhookUrl: 'https://n8n.srv830056.hstgr.cloud/webhook/b19ce1d6-4dc4-44a9-a7c4-3b0b90f874d4/chat',
+						showWelcomeScreen: false,
+						loadPreviousSession: false,
+						metadata: metadata,
+						webhookConfig: {
+							headers: {
+								'Content-Type': 'application/json',
+								'X-Instance-Id': '53a6b0110edc8a7893710a218b425ddb765f9f83b50037b30864ab5c656b7fca',
+							}
+						},
+						allowFileUploads: true,
+						allowedFilesMimeTypes: 'image/jpeg, image/png, image/gif, image/webp',
+						i18n: {
+							en: {"inputPlaceholder":"أهلاً وسهلاً! 👋"},
+						},
+						initialMessages: ["👋 أهلاً بيك في *inStyle* – المساعد الذكي بتاعك","ممكن أساعدك في:","1️⃣ تسعير منتج","2️⃣ مقاسات وخامة","3️⃣ معلومات الشحن والدفع","4️⃣ متابعة أوردر سابق","📩 ابعت رقم الاختيار أو لينك للمنتج وهرد عليك على طول."],
+					});
+				})();
+			</script>
+		
+	<div id="n8n-chat" data-v-app=""><main class="chat-layout chat-wrapper n8n-chat"><div class="chat-header"><div class="chat-heading"><h1>Hi there! 👋</h1><!----></div><p>Start a chat. We're here to help you 24/7.</p></div><div class="chat-body"><div class="chat-messages-list"><div class="chat-message chat-message-from-bot"><!----><div class="chat-message-markdown"><p>👋 أهلاً بيك في <em>inStyle</em> – المساعد الذكي بتاعك</p>
+</div><!----></div><div class="chat-message chat-message-from-bot"><!----><div class="chat-message-markdown"><p>ممكن أساعدك في:</p>
+</div><!----></div><div class="chat-message chat-message-from-bot"><!----><div class="chat-message-markdown"><p>1️⃣ تسعير منتج</p>
+</div><!----></div><div class="chat-message chat-message-from-bot"><!----><div class="chat-message-markdown"><p>2️⃣ مقاسات وخامة</p>
+</div><!----></div><div class="chat-message chat-message-from-bot"><!----><div class="chat-message-markdown"><p>3️⃣ معلومات الشحن والدفع</p>
+</div><!----></div><div class="chat-message chat-message-from-bot"><!----><div class="chat-message-markdown"><p>4️⃣ متابعة أوردر سابق</p>
+</div><!----></div><div class="chat-message chat-message-from-bot"><!----><div class="chat-message-markdown"><p>📩 ابعت رقم الاختيار أو لينك للمنتج وهرد عليك على طول.</p>
+</div><!----></div><!----></div></div><div class="chat-footer"><div data-v-31e29ba2="" class="chat-input" style="--controls-count: 2;"><div data-v-31e29ba2="" class="chat-inputs"><!----><textarea data-v-31e29ba2="" data-test-id="chat-input" placeholder="أهلاً وسهلاً! 👋" style="height: 50px;"></textarea><div data-v-31e29ba2="" class="chat-inputs-controls"><button data-v-31e29ba2="" class="chat-input-file-button" data-test-id="chat-attach-file-button"><svg data-v-31e29ba2="" viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M16.5 6v11.5a4 4 0 0 1-4 4a4 4 0 0 1-4-4V5A2.5 2.5 0 0 1 11 2.5A2.5 2.5 0 0 1 13.5 5v10.5a1 1 0 0 1-1 1a1 1 0 0 1-1-1V6H10v9.5a2.5 2.5 0 0 0 2.5 2.5a2.5 2.5 0 0 0 2.5-2.5V5a4 4 0 0 0-4-4a4 4 0 0 0-4 4v12.5a5.5 5.5 0 0 0 5.5 5.5a5.5 5.5 0 0 0 5.5-5.5V6z"></path></svg></button><button data-v-31e29ba2="" disabled="" class="chat-input-send-button"><svg data-v-31e29ba2="" viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="m2 21l21-9L2 3v7l15 2l-15 2z"></path></svg></button></div></div><!----></div></div></main></div></body></html>
